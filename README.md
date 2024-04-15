@@ -1,4 +1,3 @@
-El README.md para la Ayudantía N°3 podría lucir así:
 
 ---
 
