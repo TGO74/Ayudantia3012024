@@ -48,7 +48,7 @@ En CineIndep se necesita un sistema que permita gestionar las salas y clientes d
 
 #### Métodos
 
-1. `agregarCliente(nombre: String, rut: String, correoElectronico: String): void`: Agrega un cliente al sistema.
+
 
 ### Clase Entrada
 
@@ -61,6 +61,17 @@ En CineIndep se necesita un sistema que permita gestionar las salas y clientes d
 
 1. `venderEntrada(cliente: Cliente, tipo: Enum, sala: SalaCine): void`: Vende una entrada a un cliente.
 
+## Enumeración TipoEntrada
+
+El enum `TipoEntrada` define los tipos de entrada que pueden adquirirse para una sala de cine.
+
+### Valores
+
+- **VIP**: Entrada VIP.
+- **NORMAL**: Entrada normal.
+- **MAX**: Entrada para proyección IMAX.
+
+
 ### Clase SalaCine
 
 - **Atributos:**
@@ -71,7 +82,32 @@ En CineIndep se necesita un sistema que permita gestionar las salas y clientes d
 
 1. `verDisponibilidad(): void`: Muestra la disponibilidad de asientos en la sala y la cantidad de entradas vendidas.
 
-### Clase Promocion
+## Clase Asiento
+
+La clase `Asiento` permite gestionar los asientos de una sala de cine.
+
+### Atributos
+
+- **asientoId**: Entero que representa el identificador único del asiento.
+- **estado**: Enumeración del tipo `EstadoAsiento`, que puede ser VENDIDO o DISPONIBLE.
+
+### Métodos
+
+- **Constructor**: Permite inicializar un objeto de la clase `Asiento` con un identificador y un estado.
+- **Getters y Setters**: Para acceder y modificar los atributos del asiento.
+- **toString()**: Sobrescrito para imprimir información legible sobre el asiento.
+
+## Enumeración EstadoAsiento
+
+El enum `EstadoAsiento` define los posibles estados de un asiento en la sala de cine.
+
+### Valores
+
+- **VENDIDO**: Indica que el asiento ha sido vendido.
+- **DISPONIBLE**: Indica que el asiento está disponible para la venta.
+  
+
+### Clase Promoción
 
 - **Atributos:**
   - porcentajeDescuento: double
@@ -80,7 +116,8 @@ En CineIndep se necesita un sistema que permita gestionar las salas y clientes d
 ### Clase CineIndep
 
 - **Métodos:**
-  - ingresarClienteSala(cliente: Cliente, entrada: Entrada): boolean
+- `agregarCliente(nombre: String, rut: String, correoElectronico: String): void`: Agrega un cliente al sistema.
+  - `ingresarClienteSala(cliente: Cliente, entrada: Entrada): boolean`: Ingresa cliente a una sala
 
 ## Relaciones entre Clases
 
